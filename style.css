@@ -1,0 +1,50 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto  auto auto auto;
+  padding: 20px;
+  grid-gap:50px 50px;
+  position: relative;
+  background-color: black;
+}
+
+body{margin:160px;
+marin-color:black;
+background-color: #F0FFFF;}
+p {
+  text-align: center;
+  font-size: 200px;
+  margin-top: 450px;
+}
+.stopwatch {
+  display: inline-block;
+  background-color: azure;
+
+  padding: 5px;
+  margin: 100px;
+  margin-left:500px;
+
+}
+.stopwatch span {
+  font-weight: bold;
+  display: block;
+  font-size:50px;
+}
+.stopwatch a {
+  padding-right: 10px;
+  text-decoration: none;
+  font-size:50px;
+}
+button
+{padding: 20px;
+text-align: center;
+font-size: 30px;
+background-color: grey;
+    background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      margin: 2px 2px;
+      display: inline-block;
+      border-radius: 8px;}
+  }
+  button:hover
+  {background:#A9A9A9;}
+document.quer

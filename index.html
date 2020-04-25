@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>delta</title>
+  <link rel="stylesheet" href="C:\Users\preks\Documents\challenge 1\delta\delta 1\style.css">
+</head>
+
+<body>
+
+  <p id="demo"></p>
+
+  <script>
+    var countDownDate = new Date("april 21, 2021 15:37:25").getTime();
+
+    var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var seconds = Math.floor((distance % (1000 * 6)) / 1000);
+
+
+      document.getElementById("demo").innerHTML = seconds ;
+
+      if (seconds == 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "STARTED";
+      }
+    }, 1000);
+  </script>
+  <div class="basic stopwatch"></div>
+  <script>
+  var Stopwatch = function(elem, options) {
+
+    var timer       = createTimer(),
+        startButton = createButton("start", start),
+        stopButton  = createButton("stop", stop),
+        resetButton = createButton("reset", reset),
+        offset,
+        clock,
+        interval;
+
+    // default options
+    options = options || {};
+    options.delay = options.delay || 1;
+
+    // append elements
+    elem.appendChild(timer);
+    elem.appendChild(startButton);
+    elem.appendChild(stopButton);
+    elem.appendChild(resetButton);
+
+    // initialize
+    reset();
+
+    // private functions
+    function createTimer() {
+      return document.createElement("span");
+    }
+
+    function createButton(action, handler) {
+      var a = document.createElement("a");
+      a.href = "#" + action;
+      a.innerHTML = action;
+      a.addEventListener("click", function(event) {
+        handler();
+        event.preventDefault();
+      });
+      return a;
+    }
+
+    function start() {
+      if (!interval) {
+        offset   = Date.now();
+        interval = setInterval(update, options.delay);
+      }
+    }
+
+    function stop() {
+      if (interval) { 
+        clearInterval(interval);
+        interval = null;
+      }
+    }
+
+    function reset() {
+      clock = 0;
+      render(0);
+    }
+
+    function update() {
+      clock += delta();
+      render();
+    }
+
+    function render() {
+      timer.innerHTML = clock/1000;
+    }
+
+    function delta() {
+      var now = Date.now(),
+          d   = now - offset;
+
+      offset = now;
+      return d;
+    }
+
+    // public API
+    this.start  = start;
+    this.stop   = stop;
+    this.reset  = reset;
+  };
+
+  var elems = document.getElementsByClassName("basic");
+
+  for (var i=0, len=elems.length; i<len; i++) {
+    new Stopwatch(elems[i]);
+  }
+
+
+
+  </script>
+  <div class="grid-container">
+    <button onclick="change(this)" type="button">
+      1
+    </button>
+    <button onclick="change(this)" type="button">
+      2
+    </button>
+    <button onclick="change(this)" type="button">
+      3
+    </button>
+    <button onclick="change(this)" type="button">
+      4
+    </button>
+    <button onclick="change(this)" type="button">
+      5
+    </button>
+    <button onclick ="change(this)" type="button">
+      6
+    </button>
+    <button onclick="change(this)" type="button">
+      7
+    </button>
+    <button onclick="change(this)" type="button">
+      8
+    </button>
+    <button onclick="change(this)" type="button">
+      9
+    </button>
+    <button onclick="change(this)" type="button">
+      10
+    </button>
+    <button onclick="change (this)" type="button">
+      11
+    </button>
+    <button onclick="change(this)" type="button">
+      12
+    </button>
+    <button onclick="change(this)" type="button">
+      13
+    </button>
+    <button onclick="change(this)" type="button">
+      14
+    </button>
+    <button onclick="change(this)" type="button">
+      15
+    </button>
+    <button onclick="change(this)" type="button">
+      16
+    </button>
+    <button onclick="change(this)" type="button">
+      17
+    </button>
+    <button onclick="change(this)" type="button">
+      18
+    </button>
+    <button onclick="change(this)"type="button">
+      19
+    </button>
+    <button onclick="change(this)" type="button">
+      20
+    </button>
+    <button onclick="change(this)" type="button">
+      21
+    </button>
+    <button onclick="change(this)" type="button">
+      22
+    </button>
+    <button onclick="change(this)" type="button">
+      23
+    </button>
+    <button onclick="change(this)" type="button">
+      24
+    </button>
+    <button onclick="change(this)"type="button">
+      25
+    </button>
+
+  </div>
+  <script type="text/javascript" src="C:\Users\preks\Documents\challenge 1\delta\delta 1\index.js"></script>
+
+  </script>
+
+</body>
+
+</html>
